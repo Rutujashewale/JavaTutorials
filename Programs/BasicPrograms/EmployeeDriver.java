@@ -54,8 +54,16 @@ class EmployeeDriver{
 			
 		}
 		System.out.println("\n\n Employee details are as follows:");
+		System.out.println("\n\n Enter the employee id that you want to search:");
+		int empid=s.nextInt();
+
 		for(int k=0;k<list.size();k++){
 			System.out.println(list.get(k));
+			Employee e=list.get(k);
+			if(e.e_id==empid){
+			System.out.println("Employee found :" +
+			e.e_id + " " + e.name + " " + e.age);
+			}
 		}
 		System.out.println("Skillset :" +skillSetMap);
 		System.out.println("WorkRespo :" +workRespoMap);
