@@ -7,7 +7,7 @@ class BankAccount{
 	private String customerName,customerId;
 	
 	
-	 BankAccount(){
+	BankAccount(){
 	}
 	BankAccount(int balance,int previousTransaction,String customerId, String customerName,List<String> transactions){
 		this.balance=balance;
