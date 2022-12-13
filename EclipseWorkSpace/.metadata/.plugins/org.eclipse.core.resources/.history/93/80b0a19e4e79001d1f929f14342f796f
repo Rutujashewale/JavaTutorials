@@ -1,0 +1,23 @@
+import java.util.*;
+class BankAccountDriver{
+
+	static List<BankAccount> bankAccounts=BankOperations.bankOperations();
+	public static void main(String args[]){
+
+
+		System.out.println("Enter the details for 4 Customers:");
+		Scanner s=new Scanner(System.in);
+
+		for(int i=0;i<3;i++){
+			System.out.println("Enter the customer name " +(i+1));
+			String customerName=s.next();
+			System.out.println("Enter the customer ID " +(i+1));
+			String customerId=s.next();
+			BankAccount ba=new BankAccount(0,0,customerId,customerName,new ArrayList<String>());
+			bankAccounts.add(ba);
+		}
+		System.out.println(bankAccounts);
+
+		BankOperations.bankOperations();
+	}
+}

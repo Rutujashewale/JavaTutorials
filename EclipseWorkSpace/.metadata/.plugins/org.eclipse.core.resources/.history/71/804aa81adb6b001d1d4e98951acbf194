@@ -1,0 +1,15 @@
+
+public class Employee extends Person {
+	private String Emp_id;
+	
+	Employee(String Emp_id){
+		this.Emp_id=Emp_id;
+	}
+	
+	public String getEmpId() {
+		return this.Emp_id;
+	}
+	public void setEmpId(String Emp_id) {
+		this.Emp_id=Emp_id;
+	}
+}

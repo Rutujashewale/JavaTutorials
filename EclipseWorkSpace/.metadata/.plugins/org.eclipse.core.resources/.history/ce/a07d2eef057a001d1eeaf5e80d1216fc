@@ -1,0 +1,22 @@
+package com.rutuja.bank.services;
+
+import java.util.List;
+
+import com.rutuja.bank.main.BankAccountDriver;
+import com.rutuja.bank.service.BankOperations;
+import com.rutuja.billing.entity.BankAccount;
+
+public class BankService {
+	public static void checkBalance(String customerName,String customerId,List<String> existingList) {
+		for(int i=0;i<BankAccountDriver.bankAccounts.size();i++){
+			BankAccount ba=BankAccountDriver.bankAccounts.get(i);
+
+			if(ba.getCustomerId().equals(customerId)){
+				System.out.println("Check current bank balance:" +ba.getBalance());
+				existingList = ba.getTransactions();
+				existingList.add("Checked Balance");					
+				ba.setTransactions(existingList);
+			}
+		}
+	}
+}
