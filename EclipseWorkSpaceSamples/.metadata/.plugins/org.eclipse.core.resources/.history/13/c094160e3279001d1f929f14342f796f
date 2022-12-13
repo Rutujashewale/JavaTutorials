@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class LibraryInitializer {
+	public static List<Book> loadBookData() {
+		 List<Book> listOfBooks = new ArrayList<Book>();
+		
+		 DatabaseConnection dc=new DatabaseConnection();
+		 dc.databaseConnection();
+		return listOfBooks;
+		
+		
+		
+	}
+	
+	public static List<Student> loadStudentData() {
+		 List<Student> listOfStudents = new ArrayList<Student>();
+		
+	
+		
+		Student s1=new Student("Ram", 121,1);
+		Student s2=new Student("Shyam", 122,2);
+		Student s3=new Student("Guru", 123,3);
+		Student s4=new Student("ABC", 124,4);
+		Student s5=new Student("PQR", 125,5);
+		
+		listOfStudents.add(s1);
+		listOfStudents.add(s2);
+		listOfStudents.add(s3);
+		listOfStudents.add(s4);
+		listOfStudents.add(s5);
+		return listOfStudents;		
+	
+}
+
+}

@@ -1,0 +1,69 @@
+import java.util.List;
+import java.util.Map;
+
+public class LibraryService {
+
+	public void checkAvailability(int bookid, List<Book> listOfBooks) {
+		int flag=0;
+		for(int i=0;i<listOfBooks.size();i++){
+			Book b = listOfBooks.get(i);
+			
+			if(b.id==bookid){
+				System.out.println("Book found in the available book list\n" +b);
+				flag=1;
+				break;
+			}
+		}
+			if(flag==0){
+				System.out.println("Book not found");
+			}
+		
+	}
+	
+	public void rentABook(int bookid,int studentid,List<Book> listOfBooks,List<Book> rentedBooks, Map<Integer,Integer> rentedHash) {
+		for(int i=0;i<listOfBooks.size();i++){
+			Book b = listOfBooks.get(i);
+			if(b.id == bookid){
+
+				System.out.println("Book found in the available book list");
+				System.out.println("Removing Book from the available book list");
+				listOfBooks.remove(b);
+				System.out.println("Adding the book to rented books");
+				rentedBooks.add(b);
+
+			}
+		}
+
+		rentedHash.put(bookid,studentid);
+
+		for(Map.Entry m:rentedHash.entrySet()){  
+			System.out.println(m.getKey()+" "+m.getValue());  
+		}  
+		System.out.println("The available book list");
+		for(int i=0;i<listOfBooks.size();i++){
+			Book b = listOfBooks.get(i);
+			System.out.println(b);
+
+		}
+		System.out.println("The rented book list");
+		for(int i=0;i<rentedBooks.size();i++){
+			Book b = rentedBooks.get(i);
+			System.out.println(b);
+
+		} 
+	}
+	
+	public  void rentedBooks(int bookid,int studentid,List<Student> listOfStudents,Map<Integer,Integer> rentedHash) {
+		studentid = rentedHash.get(bookid);
+		System.out.println(studentid +" Found in the rentedHashMap");
+		for(int i=0;i<listOfStudents.size();i++){
+			Student student = listOfStudents.get(i);
+
+			if(student.id == studentid){
+				System.out.println("Student found: " +student);
+			}
+		}
+	}
+	
+	
+}

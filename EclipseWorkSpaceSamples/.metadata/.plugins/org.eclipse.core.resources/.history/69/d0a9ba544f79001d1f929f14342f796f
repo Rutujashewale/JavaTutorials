@@ -1,0 +1,12 @@
+import java.util.*;
+class BankAccountDriver{
+
+	static List<BankAccount> bankAccounts=new ArrayList<>();
+	public static void main(String args[]){
+
+
+		
+		bankAccounts=BankOperations.bankOperations();
+		BankOperations.bankOperations();
+	}
+}
