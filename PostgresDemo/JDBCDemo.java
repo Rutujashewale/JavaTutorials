@@ -11,11 +11,11 @@ public class JDBCDemo {
         String username = "postgres";
         String password = "postgres";
         String query
-            = "INSERT INTO student  VALUES (3,'Hiray',45,'Chennai')";
+            = "INSERT INTO student VALUES (3,'Hiray',45,'Chennai')";
 		String query1
-            = "INSERT INTO student  VALUES (2,'Rutuja',30,'Nasik')";
+            = "INSERT INTO student VALUES (2,'Rutuja',30,'Nasik')";
 		String query2
-            = "INSERT INTO student  VALUES (1,'Sud',25,'Pune')";
+            = "INSERT INTO student VALUES (1,'Sud',25,'Pune')";
 			
 			
   

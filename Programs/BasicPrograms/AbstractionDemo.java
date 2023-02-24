@@ -1,8 +1,9 @@
-abstract class Vehicle{
-	abstract void bike();
-}
-class Honda extends Vehicle{
-	@override void bike(){
-		System.out.println("Bike is running");
+class Ankur{
+	int id;
+	String name;
+
+	Ankur(int id,String name){
+		this.id=id;
+		this.name=name;
 	}
 }

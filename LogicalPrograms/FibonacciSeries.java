@@ -1,15 +1,29 @@
-class FibonacciSeries{
-	public static void main(String args[]){
-	int num1=0,num2=1,num3,n=6;
+import java.util.Scanner;
+
+public class FibonacciSeries {
+	static int number=0,number1=1,number2=0;
+	public static void main(String args[]) {
 	
-	System.out.println(num1+ " " +num2);
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the count");
+		int count=s.nextInt();
+		
+		for(int i=0;i<count;i++) {
+			System.out.print(fibonacci(i) + " ");
+		}
+	}
 	
-		for(int i=2;i<n;i++){
-			num3=num1+num2;
-			System.out.println(num3);
-			num1=num2;
-			num2=num3;
-			
+	static int fibonacci(int count) {
+		
+		if(count==0 ) {
+			return 0;
+		}
+		
+		else if(count==1||count==2 ) {
+			return 1;
+		}
+		else {
+			return fibonacci(count-1)+ fibonacci(count-2);
 		}
 	}
 }
